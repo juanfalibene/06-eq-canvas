@@ -9,9 +9,14 @@ body {
   margin: 0;
   height: 100vh;
   transition: all 1s ease-in-out;
+  overflow: hidden;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   width: 100%;
   background-color: rgb(28, 36, 63);
   color: #f2aebe;
@@ -32,6 +37,7 @@ p {
   line-height: 102%;
   font-weight: 300;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 label,
@@ -55,6 +61,7 @@ input::file-selector-button {
 input::file-selector-button:hover {
   background-color: #f2aebe68;
   color: rgb(40, 52, 90);
+  font-size: 0.99em;
 }
 
 .active {
@@ -75,6 +82,7 @@ section {
   height: 100%;
   padding: 3.5em 1.5em;
   gap: 0.75em;
+  width: 50%;
 }
 
 canvas,
@@ -83,4 +91,48 @@ button,
 input {
   border: 1px solid #f2aebe68;
   border-radius: 0.25em;
+}
+
+.credits,
+.credits a {
+  font-size: 0.875em;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  color: #f2aebe68;
+  transition: all 150ms ease-in-out;
+}
+
+.credits a:hover {
+  color: #f2aebe;
+  font-size: 0.9em;
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    height: auto;
+  }
+  section {
+    width: 100%;
+    gap: 1.25em;
+  }
+  canvas {
+    width: 99%;
+  }
+  input {
+    width: 80%;
+    padding: auto;
+    font-size: 0.99em;
+    height: 100%;
+  }
+  input::file-selector-button {
+    padding: auto;
+    height: 100%;
+    font-size: 0.99em;
+  }
+  input::file-selector-button:hover {
+    font-size: 0.98em;
+  }
 }
